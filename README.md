@@ -1,3 +1,3 @@
 # Presence
-# Yaa Yeet *dabs*
-# Markku on hieno mies
+
+Contributors: Bergda, Kemppine, RobinSayeed
