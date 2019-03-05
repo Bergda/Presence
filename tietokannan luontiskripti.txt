@@ -1,0 +1,36 @@
+CREATE TABLE Area(
+    A_ID int NOT NULL AUTO_INCREMENT,
+    code varchar (255) NOT NULL,
+    description varchar (255) NOT NULL,
+    PRIMARY KEY (A_ID)
+);
+CREATE TABLE Person(
+    Per_ID int NOT NULL AUTO_INCREMENT,
+    Tag_ID int NOT NULL,
+    firstname varchar (255) NOT NULL,
+    lastname varchar (255) NOT NULL,
+    PRIMARY KEY (Per_ID)
+);
+CREATE TABLE GroupOfPeople(
+    G_ID int NOT NULL AUTO_INCREMENT,
+    name varchar (255) NOT NULL,
+    PRIMARY KEY (G_ID)
+);
+CREATE TABLE Presence(
+    Pre_ID int NOT NULL AUTO_INCREMENT,
+    timestamp varchar (255) NOT NULL,
+    PRIMARY KEY (Pre_ID),
+    A_ID int,
+    Per_ID int,
+    FOREIGN KEY (A_ID) REFERENCES Area(A_ID),
+    FOREIGN KEY (Per_ID) REFERENCES Person(Per_ID)
+);
+CREATE TABLE GroupParticipation(
+    GP_ID int NOT NULL AUTO_INCREMENT,
+    name varchar (255) NOT NULL,
+    PRIMARY KEY (GP_ID),
+    G_ID int,
+    Per_ID int,
+    FOREIGN KEY (G_ID) REFERENCES GroupOfPeople(G_ID),
+    FOREIGN KEY (Per_ID) REFERENCES Person(Per_ID)
+);
