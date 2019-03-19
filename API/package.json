@@ -13,5 +13,8 @@
     "express": "^4.16.4",
     "swagger-ui-express": "^4.0.2",
     "yamljs": "^0.3.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
